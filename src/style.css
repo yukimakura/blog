@@ -11,7 +11,7 @@
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-2xl);
+  --maxWidth-wrapper: var(--maxWidth-3xl);
   --spacing-px: "1px";
   --spacing-0: 0;
   --spacing-1: 0.25rem;
@@ -394,13 +394,33 @@ a:focus {
 
 .gatsby-code-title {
   background: #f3e3b9;
-  color: #5052cb;
-  margin-bottom: -0.65em;
+  color: #388eff;
+  outline: rgba(59, 50, 9, 0.76) solid 1px;
+  margin-bottom: -0.5em;
   padding: 0.7rem 1.05rem;
   font-size: 0.8em;
   line-height: 0.2;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   font-weight: 600;
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px 8px 8px 8px;
   display: table;
+}
+.gatsby-remark-prismjs-copy-button {
+  cursor: pointer;
+  pointer-events: initial;
+  font-size: 13px;
+  padding: 3px 5px 2px;
+  border-radius: 3px;
+  transition: background-color 0.2s ease-in-out;
+  color: rgba(233, 214, 214, 0.88);
+  background-color: rgba(68, 74, 34, 0.76);
+}
+
+.gatsby-remark-prismjs-copy-button:hover {
+  background: rgb(255, 167, 196);
+  color: rgba(77, 47, 47, 0.88);
+}
+.gatsby-remark-prismjs-copy-button-container {
+  left: 0;
+  padding-right: 8px;
 }
