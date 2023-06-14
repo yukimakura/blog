@@ -8,6 +8,8 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -20,6 +22,7 @@ const Bio = () => {
           }
           social {
             twitter
+            github
           }
         }
       }
@@ -36,7 +39,7 @@ const Bio = () => {
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
+        src="../images/yukimakuraicon.jpeg"
         width={50}
         height={50}
         quality={95}
@@ -44,11 +47,29 @@ const Bio = () => {
       />
       {author?.name && (
         <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
+          {author?.summary || null}<br></br>
+          <a href="https://yukihurumakura.blogspot.com/">旧サイトはこちら！</a>
           {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
+            <a
+              style={{
+                fontSize: `1.75em`,
+                color: `#007fff`,
+                boxShadow: `none`,
+              }}
+              href={`https://twitter.com/${social.twitter}`}
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
+            <a
+              style={{
+                fontSize: `1.75em`,
+                color: `#000`,
+                boxShadow: `none`,
+              }}
+              href={`https://github.com/${social.github}`}
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
         </p>
       )}
     </div>

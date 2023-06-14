@@ -1,10 +1,10 @@
 ---
-title: Hello World
+title: Hello benri
 date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
 ---
 
-This is my first post on my new fake blog! How exciting!
+This is my first  on my new fake blog! How exciting!
 
 I'm sure I'll write a lot more interesting things in the future.
 
@@ -23,7 +23,7 @@ Oh, and here's a great quote from this Wikipedia on
 
 You can also write code blocks here!
 
-```js
+```js:title=kusocode.js
 const saltyDuckEgg = "chinese preserved food product"
 ```
 
