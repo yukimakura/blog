@@ -59,7 +59,7 @@ const BlogPostTemplate = ({
           </li>
         </ul>
       </nav>
-      <Sidebar />
+      {/* <Sidebar /> */}
     </Layout>
   )
 }

@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.7.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource-variable/montserrat": "^5.0.4",
@@ -40,7 +41,8 @@
     "preact-render-to-string": "^5.2.6",
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-sidebar": "^3.0.2"
   },
   "devDependencies": {
     "gatsby-remark-code-titles": "^1.1.0",
