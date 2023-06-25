@@ -429,6 +429,3 @@ a:focus {
   padding-right: 8px;
 }
 
-li::marker{
-  color: rgba(0,0,0,0);
-}

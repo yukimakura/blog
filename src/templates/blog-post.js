@@ -40,6 +40,7 @@ const BlogPostTemplate = ({
           </Box>
           <hr />
         </Stack>
+        <hr/>
         <footer>
           このポエムを轟かせたいと思ったらシェアやで
           <br />

@@ -17,6 +17,9 @@ const Sidetoc = (props) => {
     padding-bottom: 1em;
     margin-left: 1em;
     list-style: none;
+    li::marker{
+        color: rgba(0,0,0,0);
+      }
     `
 
     console.log(props.tocdata);
