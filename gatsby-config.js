@@ -15,7 +15,7 @@ module.exports = {
       summary: `新しい技術や古い技術も気になる優柔不断マン！トキメキ大事に！`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://yukimakura.github.io/`,
     social: {
       twitter: `yukimakura86`,
       github: `yukimakura`,

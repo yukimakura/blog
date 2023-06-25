@@ -11,8 +11,10 @@
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
   --maxWidth-5xl: 66rem;
+  --maxWidth-6xl: 73rem;
+  --maxWidth-7xl: 80rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-5xl);
+  --maxWidth-wrapper: var(--maxWidth-7xl);
   --spacing-px: "1px";
   --spacing-0: 0;
   --spacing-1: 0.25rem;
@@ -249,8 +251,8 @@ a:focus {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
   height: max-content;
-  padding: var(--spacing-10) var(--spacing-5);
-  background-color: rgba(241, 219, 122, 0.76);
+  padding: var(--spacing-5) var(--spacing-1);
+  background-color: rgba(241, 219, 122, 0.866);
   ;
 }
 
@@ -259,7 +261,8 @@ a:focus {
 }
 
 .global-header {
-  margin-bottom: var(--spacing-12);
+  margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-5);
 }
 
 @font-face {
@@ -309,8 +312,8 @@ a:focus {
 }
 
 .bio {
-  display: flex;
-  margin-bottom: var(--spacing-16);
+  /* display: flex; */
+  margin-bottom: var(--spacing-8);
   font-family: tegaki-font;
   font-weight: bold;
   font-size: var(--fontSize-2);
@@ -426,15 +429,6 @@ a:focus {
   padding-right: 8px;
 }
 
-.sidebar-wrapper {
-    /*stickyで固定*/
-    position: -webkit-sticky;/*Safari*/
-  position: sticky;
-    /*固定したい位置*/
-  top: 100px;
-    /*ナビゲーションの形状*/
-    background:#fff;
-  border: 1px solid #eee;
-  box-shadow:0 0 5px #ddd;
-  padding: 20px;
+li::marker{
+  color: rgba(0,0,0,0);
 }

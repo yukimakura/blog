@@ -42,7 +42,9 @@
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-sidebar": "^3.0.2"
+    "react-share": "^4.4.1",
+    "react-sidebar": "^3.0.2",
+    "react-twitter-widgets": "^1.11.0"
   },
   "devDependencies": {
     "gatsby-remark-code-titles": "^1.1.0",

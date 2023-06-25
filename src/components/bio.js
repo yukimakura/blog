@@ -10,6 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { Stack, Box } from '@chakra-ui/react';
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -35,24 +36,25 @@ const Bio = () => {
 
   return (
     <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/yukimakuraicon.jpeg"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
-      {author?.name && (
-        <p>
-          {author?.summary || null}<br></br>
-          <a href="https://yukihurumakura.blogspot.com/">旧サイトはこちら！</a>
-          {` `}
+      <Stack direction spacing='3px' justifyContent='center' >
+        <Box alignContent='center'>
+          <Stack spaceing='0px'>
+            <Box marginLeft='0em'>
+              <StaticImage
+                className="bio-avatar"
+                layout="fixed"
+                formats={["auto", "webp", "avif"]}
+                src="../images/yukimakuraicon.jpeg"
+                width={55}
+                height={55}
+                quality={95}
+                alt="Profile picture"
+              />
+            </Box>
+            <Box>
             <a
               style={{
-                fontSize: `1.75em`,
+                fontSize: `1.35em`,
                 color: `#007fff`,
                 boxShadow: `none`,
               }}
@@ -62,7 +64,7 @@ const Bio = () => {
             </a>
             <a
               style={{
-                fontSize: `1.75em`,
+                fontSize: `1.35em`,
                 color: `#000`,
                 boxShadow: `none`,
               }}
@@ -70,8 +72,20 @@ const Bio = () => {
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
-        </p>
-      )}
+            </Box>
+          </Stack>
+        </Box>
+        <Box >
+
+          {author?.name && (
+            <p>
+              {author?.summary || null}<br></br>
+              {` `}
+              <a href="https://yukihurumakura.blogspot.com/" target="_blank" rel="noopener noreferrer">旧サイトはこちら！</a>
+            </p>
+          )}
+        </Box>
+      </Stack>
     </div>
   )
 }

@@ -5,31 +5,46 @@ import 'katex/dist/katex.min.css';
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Sidebar from '../components/sidebar'
+import Sidetoc from '../components/sidetoc'
+import ShareButtonList from "../components/sharebuttonlist";
+import { Stack, Box } from "@chakra-ui/react";
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
   location,
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
-
+  const timetoread = post.timeToRead || 0
   return (
+
     <Layout location={location} title={siteTitle}>
       <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr />
+        <Stack direction spacing='1em'>
+          <Box maxW="45em">
+            <header>
+              <h1 itemProp="headline">{post.frontmatter.title}</h1>
+              <p>{post.frontmatter.date}</p>
+            <p>この記事は{timetoread}分ぐらいで読めるっぽいよ。</p>
+            </header>
+            <section
+              dangerouslySetInnerHTML={{ __html: post.html }}
+              itemProp="articleBody"
+            />
+          </Box>
+          <Box maxW="20em">
+            <Sidetoc tocdata={post.tableOfContents}/>
+          </Box>
+          <hr />
+        </Stack>
         <footer>
+          このポエムを轟かせたいと思ったらシェアやで
+          <br />
+          <br />
+          <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${site.siteMetadata?.siteUrl}${post.fields?.slug.substring(1,post.fields?.slug.length-1)}`} />
           {/* <Bio /> */}
         </footer>
       </article>
@@ -84,6 +99,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -95,6 +111,11 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
+      fields{
+        slug
+      }
+      tableOfContents
+      timeToRead
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
       fields {

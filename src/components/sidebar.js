@@ -1,7 +1,13 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from 'react'
+import styled from '@emotion/styled'
+import { Timeline } from 'react-twitter-widgets'
 
 const Sidebar = () => {
+
+  const Wrapper = styled.div`
+  `
+
   const data = useStaticQuery(graphql`
   query MyQuery {
     allMarkdownRemark {
@@ -22,11 +28,17 @@ const Sidebar = () => {
 
   // const posts = data.allMarkdownRemark.edges
   return (
-    <div >
-
-      <h1>新着記事</h1>
-       
-  </div>
+    <Wrapper >
+      <Timeline
+        dataSource={{
+          sourceType: 'profile',
+          screenName: 'yukimakura86'
+        }}
+        options={{
+          height: '1500'
+        }}
+      />
+    </Wrapper>
   )
 }
 
