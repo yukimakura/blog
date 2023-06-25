@@ -45,7 +45,7 @@ const BlogPostTemplate = ({
           このポエムを轟かせたいと思ったらシェアやで
           <br />
           <br />
-          <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl+post.fields?.slug)}`} />
+          <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl+'/blog'+post.fields?.slug)}`} />
           {/* <Bio /> */}
         </footer>
       </article>
