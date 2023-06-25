@@ -86,7 +86,7 @@ body {
   font-size: var(--fontSize-1);
   color: var(--color-text);
   height: max-content;
-  background: linear-gradient(to top, rgba(247, 255, 203, 0.589) 0%, rgba(247, 255, 203, 0.589) 100%),url(./images/backgroundimage.jpg);
+  background: linear-gradient(to top, rgba(247, 255, 203, 0.589) 0%, rgba(247, 255, 203, 0.589) 100%), url(./images/backgroundimage.jpg);
 
 }
 
@@ -253,8 +253,8 @@ a:focus {
   height: max-content;
   padding: var(--spacing-5) var(--spacing-1);
   background-color: rgba(241, 219, 122, 0.866);
-  ;
 }
+
 
 .global-wrapper[data-is-root-path="true"] .bio {
   margin-bottom: var(--spacing-20);
@@ -280,7 +280,7 @@ a:focus {
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   font-family: tegaki-font;
-  text-shadow:0 0 35px rgb(77, 252, 71);
+  text-shadow: 0 0 35px rgb(77, 252, 71);
 }
 
 
@@ -328,6 +328,25 @@ a:focus {
   margin-bottom: var(--spacing-0);
   min-width: 50px;
   border-radius: 100%;
+}
+
+.blog-post {
+  animation-name: fadeUpAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .blog-post header h1 {
@@ -409,6 +428,7 @@ a:focus {
   border-radius: 8px 8px 8px 8px;
   display: table;
 }
+
 .gatsby-remark-prismjs-copy-button {
   cursor: pointer;
   pointer-events: initial;
@@ -424,8 +444,8 @@ a:focus {
   background: rgb(255, 167, 196);
   color: rgba(77, 47, 47, 0.88);
 }
+
 .gatsby-remark-prismjs-copy-button-container {
   left: 0;
   padding-right: 8px;
 }
-
