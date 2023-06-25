@@ -1,3 +1,10 @@
+## ゆきふるまくらの
+このサイトはGatsbyのStarterキットをベースに作られています。
+ライセンスは継承するものとします。
+
+以下原文ママ
+----
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
