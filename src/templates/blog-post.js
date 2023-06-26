@@ -8,6 +8,7 @@ import Seo from "../components/seo"
 import Sidetoc from '../components/sidetoc'
 import ShareButtonList from "../components/sharebuttonlist";
 import { Stack, Box } from "@chakra-ui/react";
+import { BrowserView, MobileView } from "react-device-detect"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -23,29 +24,42 @@ const BlogPostTemplate = ({
         itemScope
         itemType="http://schema.org/Article"
       >
-        <Stack direction spacing='1em'>
-          <Box maxW="45em">
-            <header>
-              <h1 itemProp="headline">{post.frontmatter.title}</h1>
-              <p>{post.frontmatter.date}</p>
-            <p>この記事は{timetoread}分ぐらいで読めるっぽいよ。</p>
-            </header>
-            <section
-              dangerouslySetInnerHTML={{ __html: post.html }}
-              itemProp="articleBody"
-            />
-          </Box>
-          <Box maxW="20em">
-            <Sidetoc tocdata={post.tableOfContents}/>
-          </Box>
-          <hr />
-        </Stack>
-        <hr/>
+        <BrowserView>
+          <Stack direction spacing='2em'>
+            <Box w="50em" maxW="50em">
+              <header>
+                <h1 itemProp="headline">{post.frontmatter.title}</h1>
+                <p>{post.frontmatter.date}</p>
+                <p><b>この記事は{timetoread}分ぐらいで読めるっぽいよ。</b></p>
+              </header>
+              <section
+                dangerouslySetInnerHTML={{ __html: post.html }}
+                itemProp="articleBody"
+              />
+            </Box>
+            <Box maxW="20em">
+              <Sidetoc tocdata={post.tableOfContents} />
+            </Box>
+            <hr />
+          </Stack>
+        </BrowserView>
+        <MobileView>
+          <header>
+            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.date}</p>
+            <p><b>この記事は{timetoread}分ぐらいで読めるっぽいよ。</b></p>
+          </header>
+          <section
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            itemProp="articleBody"
+          />
+        </MobileView>
+        <hr />
         <footer>
           このポエムを轟かせたいと思ったらシェアやで
           <br />
           <br />
-          <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl+'/blog'+post.fields?.slug)}`} />
+          <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`} />
           {/* <Bio /> */}
         </footer>
       </article>

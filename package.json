@@ -1,6 +1,6 @@
 {
   "name": "gatsby-starter-blog",
-  "homepage": "https://yukimakura.github.io/blog/",
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
@@ -42,6 +42,7 @@
     "preact-render-to-string": "^5.2.6",
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.1.0",
     "react-share": "^4.4.1",
     "react-sidebar": "^3.0.2",
@@ -51,7 +52,6 @@
     "gatsby-remark-code-titles": "^1.1.0",
     "prettier": "^2.8.8"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
     "gatsby"
   ],

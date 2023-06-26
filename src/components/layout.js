@@ -4,32 +4,39 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import { Stack, Box } from '@chakra-ui/react';
 import Sidebar from "../components/sidebar"
 import Bio from "../components/bio"
+import { BrowserView, MobileView } from "react-device-detect"
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
 
   header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
+    <h1 className="main-heading">
+      <Link to="/">{title}</Link>
+    </h1>
   )
-  
+
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <center>
 
-      <header className="global-header">{header}</header>
+        <header className="global-header">{header}</header>
       </center>
       <Bio />
-      <Stack direction spacing='3em'>
-        <Box mwxW="250px" w="250px" h="100%" className="sidebar-wrapper">
-          <Sidebar/>
-        </Box>
-        <Box maxW="55em">
-          <main className="main-body">{children}</main>
-        </Box>
-      </Stack>
+      <BrowserView>
+        <Stack direction spacing='3em'>
+          <Box mwxW="250px" w="250px" h="100%" className="sidebar-wrapper">
+            <Sidebar />
+          </Box>
+          <Box maxW="65em">
+            <main className="main-body">{children}</main>
+          </Box>
+        </Stack>
+      </BrowserView>
+      <MobileView>
+        <main>{children}</main>
+      </MobileView>
       <footer>
         <center>
           © {new Date().getFullYear()} yukimakura All rights reserved, Built with
