@@ -67,14 +67,13 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: "language-",
-              inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: true,
               noInlineHighlight: false,
               prompt: {
                 user: "yukimakura",
-                host: "ThinkPad.local",
-                global: false,
+                host: "ThinkPadX1C6.local",
+                global: true,
               },
             },
           },
