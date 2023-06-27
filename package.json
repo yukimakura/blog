@@ -20,7 +20,6 @@
     "gatsby": "^5.10.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
-    "gatsby-plugin-disqus": "^1.2.6",
     "gatsby-plugin-feed": "^5.10.0",
     "gatsby-plugin-image": "^3.10.0",
     "gatsby-plugin-manifest": "^5.10.0",
@@ -50,6 +49,7 @@
     "react-twitter-widgets": "^1.11.0"
   },
   "devDependencies": {
+    "gatsby-plugin-disqus": "^1.2.6",
     "gatsby-remark-code-titles": "^1.1.0",
     "prettier": "^2.8.8"
   },

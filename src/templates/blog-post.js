@@ -22,6 +22,7 @@ const BlogPostTemplate = ({
     url: `${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`,
     identifier: post.id,
     title: siteTitle,
+    
   }
   return (
 
@@ -68,7 +69,7 @@ const BlogPostTemplate = ({
           <br />
           <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`} />
           {/* <Bio /> */}
-          {/* <Disqus config={disqusConfig} /> */}
+          <Disqus config={disqusConfig} />
         </footer>
       </article>
       <nav className="blog-post-nav">
