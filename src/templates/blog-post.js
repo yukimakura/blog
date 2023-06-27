@@ -9,6 +9,7 @@ import Sidetoc from '../components/sidetoc'
 import ShareButtonList from "../components/sharebuttonlist";
 import { Stack, Box } from "@chakra-ui/react";
 import { BrowserView, MobileView } from "react-device-detect"
+import { Disqus } from 'gatsby-plugin-disqus'
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -16,6 +17,13 @@ const BlogPostTemplate = ({
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
   const timetoread = post.timeToRead || 0
+
+  let disqusConfig = {
+    url: `${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`,
+    identifier: post.id,
+    title: siteTitle,
+    
+  }
   return (
 
     <Layout location={location} title={siteTitle}>
@@ -61,6 +69,7 @@ const BlogPostTemplate = ({
           <br />
           <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`} />
           {/* <Bio /> */}
+          <Disqus config={disqusConfig} />
         </footer>
       </article>
       <nav className="blog-post-nav">
