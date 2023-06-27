@@ -26,7 +26,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import React from 'react'
 import { Disqus } from 'gatsby-plugin-disqus'
 
-const Hoge = = ({
+const Hoge = ({
   data: { previous, next, site, markdownRemark: post },
   location,
 }) => {
