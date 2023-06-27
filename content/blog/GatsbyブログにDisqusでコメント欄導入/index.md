@@ -21,7 +21,7 @@ npm install --save gatsby-plugin-disqus
 下図の赤枠で囲った領域を`gatsby-config.js`に追記しとく
 ![](2023-06-27-21-42-24.png)
 5. 自分のサイトの埋め込みたい箇所にDisqusを埋め込む
-``` jsx:title=example.js{3,10-14,17}
+``` jsx{3,10-14,17}:title=example.js
 import { graphql, useStaticQuery } from "gatsby"
 import React from 'react'
 import { Disqus } from 'gatsby-plugin-disqus'
