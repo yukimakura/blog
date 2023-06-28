@@ -2,6 +2,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import React from 'react'
 import styled from '@emotion/styled'
 import { Timeline } from 'react-twitter-widgets'
+import MonthlyArchives from "./monthlyarchives"
+
 
 const Sidebar = () => {
 
@@ -29,6 +31,7 @@ const Sidebar = () => {
   // const posts = data.allMarkdownRemark.edges
   return (
     <Wrapper >
+      <MonthlyArchives />
       <Timeline
         dataSource={{
           sourceType: 'profile',

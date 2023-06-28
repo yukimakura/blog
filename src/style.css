@@ -283,6 +283,18 @@ a:focus {
   text-shadow: 0 0 35px rgb(77, 252, 71);
 }
 
+.main-heading-moblie {
+  font-size: var(--fontSize-7);
+  margin: 0;
+  display: inline-block;
+  background: linear-gradient(135deg, #4d69e8 0%, #45c4ea 20%, #4d69e8 70%, #45c4ea 100%);
+  background: -webkit-linear-gradient(-45deg, #4d69e8 0%, #45c4ea 20%, #4d69e8 70%, #45c4ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-family: tegaki-font;
+  text-shadow: 0 0 35px rgb(77, 252, 71);
+}
 
 .post-list-item {
   margin-bottom: var(--spacing-8);

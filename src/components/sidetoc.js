@@ -22,11 +22,9 @@ const Sidetoc = (props) => {
       }
     `
 
-    console.log(props.tocdata);
     if(props.tocdata == ''){
         return ( <div></div>)
     }
-    // const posts = data.allMarkdownRemark.edges
     return (
         <Wrapper >
             <TocBody
