@@ -12,9 +12,18 @@ const Layout = ({ location, title, children }) => {
   let header
 
   header = (
-    <h1 className="main-heading">
-      <Link to="/">{title}</Link>
-    </h1>
+    <div>
+      <BrowserView>
+        <h1 className="main-heading">
+          <Link to="/">{title}</Link>
+        </h1>
+      </BrowserView>
+      <MobileView>
+        <h3 className="main-heading-moblie">
+          <Link to="/">{title}</Link>
+        </h3>
+      </MobileView>
+    </div>
   )
 
   return (
@@ -36,6 +45,7 @@ const Layout = ({ location, title, children }) => {
       </BrowserView>
       <MobileView>
         <main>{children}</main>
+        <Sidebar />
       </MobileView>
       <footer>
         <center>
