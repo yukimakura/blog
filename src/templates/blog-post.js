@@ -7,9 +7,11 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Sidetoc from '../components/sidetoc'
 import ShareButtonList from "../components/sharebuttonlist";
-import { Stack, Box } from "@chakra-ui/react";
+import { Stack, Box, HStack } from "@chakra-ui/react";
 import { BrowserView, MobileView } from "react-device-detect"
 import { Disqus } from 'gatsby-plugin-disqus'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHashtag } from '@fortawesome/free-solid-svg-icons'
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -22,8 +24,10 @@ const BlogPostTemplate = ({
     url: `${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`,
     identifier: post.id,
     title: siteTitle,
-    
+
   }
+  let tags = post.frontmatter.tags
+  console.log(tags)
   return (
 
     <Layout location={location} title={siteTitle}>
@@ -38,6 +42,21 @@ const BlogPostTemplate = ({
               <header>
                 <h1 itemProp="headline">{post.frontmatter.title}</h1>
                 <p>{post.frontmatter.date}</p>
+                <HStack>
+
+                  {tags && tags.length > 0 && tags?.map(tag => {
+                    return (
+                      <Box >
+                        <a href="" className="tag-button">
+                          <FontAwesomeIcon icon={faHashtag} />
+                          {" " + tag}
+                        </a>
+                      </Box>
+                    )
+                  }
+                  )
+                  }
+                </HStack>
                 <p><b>この記事は{timetoread}分ぐらいで読めるっぽいよ。</b></p>
               </header>
               <section
@@ -55,6 +74,19 @@ const BlogPostTemplate = ({
           <header>
             <h1 itemProp="headline">{post.frontmatter.title}</h1>
             <p>{post.frontmatter.date}</p>
+
+              {tags && tags.length > 0 && tags?.map(tag => {
+                return (
+                  <Box >
+                    <a href="" className="tag-button">
+                      <FontAwesomeIcon icon={faHashtag} />
+                      {" " + tag}
+                    </a>
+                  </Box>
+                )
+              }
+              )
+              }
             <p><b>この記事は{timetoread}分ぐらいで読めるっぽいよ。</b></p>
           </header>
           <section
@@ -99,7 +131,7 @@ const BlogPostTemplate = ({
         </ul>
       </nav>
       {/* <Sidebar /> */}
-    </Layout>
+    </Layout >
   )
 }
 
@@ -134,6 +166,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
       fields{
         slug
