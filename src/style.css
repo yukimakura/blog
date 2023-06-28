@@ -461,3 +461,31 @@ a:focus {
   left: 0;
   padding-right: 8px;
 }
+
+.tag-button {
+  color: gray;
+  background-color: white;
+
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  margin: 0.25rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+}
+
+.tag-button:hover {
+  color: rgb(190, 185, 185);
+  background-color: wheat;
+}

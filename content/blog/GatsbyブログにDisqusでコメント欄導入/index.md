@@ -2,6 +2,7 @@
 title: GatsbyブログにDisqusでコメント欄導入
 date: "2023-06-27T21:30:00Z"
 description: "GatsbyブログにDisqusでコメント欄導入"
+tags: ["gatsby","react","Disqus"]
 ---
 Gatsbyは静的サイトなわけで、   
 当然コメントなどの動的コンテンツを扱えない。   
