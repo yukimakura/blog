@@ -43,8 +43,10 @@ const MonthlyArchives = () => {
     let yearGropuingDara = groupBy(groupingData.map(x => [x[0][0].substring(0, 4), x]), x => x[0]);
     return (
         <Wrapper >
-            <h3>月別アーカイブ</h3>
-            <ol style={{ listStyle: `none` }}>
+            <center>
+            <h4>月別アーカイブ</h4>
+            </center>
+            <ol style={{ listStyle: `none` , paddingLeft: '1em' }}>
                 {yearGropuingDara.map(yearGr => {
                     return (
                         <li>
