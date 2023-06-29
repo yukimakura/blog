@@ -1,8 +1,6 @@
 import { graphql, useStaticQuery, Link } from "gatsby"
 import React from 'react'
 import styled from '@emotion/styled'
-import { Timeline } from 'react-twitter-widgets'
-import { typography } from "@chakra-ui/react"
 
 const MonthlyArchives = () => {
 

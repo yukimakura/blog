@@ -1,6 +1,6 @@
 ---
 title: Gatsbyブログに月別アーカイブを追加
-date: "2023-06-29T08:10:00Z"
+date: "2023-06-29T23:13:00Z"
 description: "Gatsbyブログに月別アーカイブを追加"
 tags: ["gatsby","react"]
 ---
@@ -14,8 +14,6 @@ GraphQLのスキーマとして、[gatsby-starter-blog](https://www.gatsbyjs.com
 import { graphql, useStaticQuery, Link } from "gatsby"
 import React from 'react'
 import styled from '@emotion/styled'
-import { Timeline } from 'react-twitter-widgets'
-import { typography } from "@chakra-ui/react"
 
 const MonthlyArchives = () => {
 
@@ -103,7 +101,7 @@ export default MonthlyArchives
 
 ### 使用例
 あとは任意の場所にコンポーネントを宣言する
-``` jsx{3,11}:title=hoge.js
+``` jsx{3,10}:title=hoge.js
 import { graphql, useStaticQuery } from "gatsby"
 import React from 'react'
 import MonthlyArchives from "./monthlyarchives"
