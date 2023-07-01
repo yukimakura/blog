@@ -21,7 +21,7 @@ const MonthlyArchives = () => {
 
     const data = useStaticQuery(graphql`
   query MyQuery {
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark {
       edges {
         node {
           fields {
