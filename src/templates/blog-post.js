@@ -47,7 +47,7 @@ const BlogPostTemplate = ({
                   {tags && tags.length > 0 && tags?.map(tag => {
                     return (
                       <Box >
-                        <a href="" className="tag-button">
+                        <a href={"/tagpage/?tag=" + tag} className="tag-button">
                           <FontAwesomeIcon icon={faHashtag} />
                           {" " + tag}
                         </a>
@@ -75,18 +75,18 @@ const BlogPostTemplate = ({
             <h1 itemProp="headline">{post.frontmatter.title}</h1>
             <p>{post.frontmatter.date}</p>
 
-              {tags && tags.length > 0 && tags?.map(tag => {
-                return (
-                  <Box >
-                    <a href="" className="tag-button">
-                      <FontAwesomeIcon icon={faHashtag} />
-                      {" " + tag}
-                    </a>
-                  </Box>
-                )
-              }
+            {tags && tags.length > 0 && tags?.map(tag => {
+              return (
+                <Box >
+                  <a href="" className="tag-button">
+                    <FontAwesomeIcon icon={faHashtag} />
+                    {" " + tag}
+                  </a>
+                </Box>
               )
-              }
+            }
+            )
+            }
             <p><b>この記事は{timetoread}分ぐらいで読めるっぽいよ。</b></p>
           </header>
           <section
@@ -130,7 +130,6 @@ const BlogPostTemplate = ({
           </li>
         </ul>
       </nav>
-      {/* <Sidebar /> */}
     </Layout >
   )
 }
