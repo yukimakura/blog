@@ -33,7 +33,7 @@ const MonthlyArchives = () => {
 
 
     const data = useStaticQuery(graphql`
-  query MyQuery {
+  query MonthlyArchiveQuery {
     allMarkdownRemark {
       edges {
         node {

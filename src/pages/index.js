@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHashtag } from '@fortawesome/free-solid-svg-icons'
 import { Stack, Box, HStack } from "@chakra-ui/react";
+import { Helmet } from 'react-helmet'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -15,6 +16,16 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
+        <Helmet
+          title={siteTitle}
+          meta={[
+            {
+              name: 'google-site-verification',
+              content:
+                'U5sf9XiSo5L7RagNcIChHMtq688ofNAWq0Cg9Oyxvec',
+            },
+          ]}
+        />
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -51,9 +62,9 @@ const BlogIndex = ({ data, location }) => {
                       return (
                         <Box >
                           <Link to={"/tagpage/?tag=" + tag} rel="prev" className="tag-button">
-                                                        <FontAwesomeIcon icon={faHashtag} />
-                                                        {" " + tag}
-                                                    </Link>
+                            <FontAwesomeIcon icon={faHashtag} />
+                            {" " + tag}
+                          </Link>
                         </Box>
                       )
                     }
