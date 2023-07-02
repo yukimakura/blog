@@ -50,10 +50,10 @@ const BlogIndex = ({ data, location }) => {
                     {post.frontmatter.tags && post.frontmatter.tags.length > 0 && post.frontmatter.tags?.map(tag => {
                       return (
                         <Box >
-                          <a href={"/tagpage/?tag=" + tag} className="tag-button">
-                            <FontAwesomeIcon icon={faHashtag} />
-                            {" " + tag}
-                          </a>
+                          <Link to={"/tagpage/?tag=" + tag} rel="prev" className="tag-button">
+                                                        <FontAwesomeIcon icon={faHashtag} />
+                                                        {" " + tag}
+                                                    </Link>
                         </Box>
                       )
                     }
