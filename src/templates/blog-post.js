@@ -47,10 +47,10 @@ const BlogPostTemplate = ({
                   {tags && tags.length > 0 && tags?.map(tag => {
                     return (
                       <Box >
-                        <a href={"/tagpage/?tag=" + tag} className="tag-button">
+                        <Link to={"/tagpage/?tag=" + tag} rel="prev" className="tag-button">
                           <FontAwesomeIcon icon={faHashtag} />
                           {" " + tag}
-                        </a>
+                        </Link>
                       </Box>
                     )
                   }
@@ -78,10 +78,10 @@ const BlogPostTemplate = ({
             {tags && tags.length > 0 && tags?.map(tag => {
               return (
                 <Box >
-                  <a href="" className="tag-button">
+                  <Link to={"/tagpage/?tag=" + tag} rel="prev" className="tag-button">
                     <FontAwesomeIcon icon={faHashtag} />
                     {" " + tag}
-                  </a>
+                  </Link>
                 </Box>
               )
             }
