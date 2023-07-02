@@ -3,15 +3,13 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Timeline } from 'react-twitter-widgets'
 import MonthlyArchives from "./monthlyarchives"
-
+import AllTags from "./alltags"
+import { Stack, Box } from '@chakra-ui/react';
 
 const Sidebar = () => {
 
-  const Wrapper = styled.div`
-  `
-
   const data = useStaticQuery(graphql`
-  query MyQuery {
+  query sidebarQuery {
     allMarkdownRemark {
       edges {
         node {
@@ -30,8 +28,10 @@ const Sidebar = () => {
 
   // const posts = data.allMarkdownRemark.edges
   return (
-    <Wrapper >
+    <Stack>
+
       <MonthlyArchives />
+      <AllTags />
       <Timeline
         dataSource={{
           sourceType: 'profile',
@@ -41,7 +41,7 @@ const Sidebar = () => {
           height: '1500'
         }}
       />
-    </Wrapper>
+    </Stack>
   )
 }
 

@@ -1,5 +1,8 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHashtag } from '@fortawesome/free-solid-svg-icons'
+import { Stack, Box, HStack } from "@chakra-ui/react";
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -24,7 +27,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      
+
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -42,6 +45,21 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
+                  <HStack>
+
+                    {post.frontmatter.tags && post.frontmatter.tags.length > 0 && post.frontmatter.tags?.map(tag => {
+                      return (
+                        <Box >
+                          <a href={"/tagpage/?tag=" + tag} className="tag-button">
+                            <FontAwesomeIcon icon={faHashtag} />
+                            {" " + tag}
+                          </a>
+                        </Box>
+                      )
+                    }
+                    )
+                    }
+                  </HStack>
                   <small>{post.frontmatter.date}</small>
                 </header>
                 <section>
@@ -87,6 +105,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
         }
       }
     }
