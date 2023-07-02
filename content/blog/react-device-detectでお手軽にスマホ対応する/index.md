@@ -2,6 +2,7 @@
 title: react-device-detectでお手軽にスマホ対応する
 date: "2023-06-26T21:00:00Z"
 description: "react-device-detectでお手軽にスマホ対応する"
+tags: ["gatsby","react"]
 ---
 ## 手順
 ### npmかyarnでreact-device-detectをインストール
