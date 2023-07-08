@@ -24,6 +24,20 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `skyblue`,
+        showSpinner: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-fix-fouc`,
+      options: {
+        attributeName: "is-loading",
+        timeout: 3000,
+      },
+    },
+    {
 
       resolve: `gatsby-plugin-disqus`,
       options: {
