@@ -74,23 +74,28 @@ VolumeMountNM : **node_modulesのみVolumeMount**
 |--|--|--|--|
 |Delegated|6m46.746s|5m25.364s|3m47.648s|
 |Pure|8m15.052s|6m38.064s|3m50.435s|
-|Delegated & VolumeMountNM|1m50.672s|2m6.004s|1m15.796s|
-|Pure & VolumeMountNM|1m46.771s|2m0.373s|1m1.540s|
+|**Delegated & VolumeMountNM**|1m50.672s|2m6.004s|1m15.796s|
+|**Pure & VolumeMountNM**|1m46.771s|2m0.373s|1m1.540s|
 
 #### gatsby build
 |マウント条件|real|user|sys|
 |--|--|--|--|
 |Delegated|8m32.072s|8m26.974s|4m0.114s|
 |Pure|7m7.828s|6m42.795s|1m39.654s|
-|Delegated & VolumeMountNM|1m13.318s|2m19.687s|0m13.755s|
-|Pure & VolumeMountNM|2m13.731s|8m21.418s|1m1.227s|
+|**Delegated & VolumeMountNM**|1m13.318s|2m19.687s|0m13.755s|
+|**Pure & VolumeMountNM**|2m13.731s|8m21.418s|1m1.227s|
 
 ## 〆
 当方も積極的にDockerを使ってきたつもりでしたが、      
 お恥ずかしいことにこのことに今まで気づきませんでした...    
 でもまさか、こんなに差があるとは...恐ろしや...   
+今回の例はGatsbyでしたが、Gatsbyに限らず全てに共通することと思っています。   
 コンテナ仮想化はめちゃくちゃ便利ですが、   
 罠もいろいろありそうなのでしっかり学んだ上で活用していきたいですなぁ    
 WSL2の環境でも試しましたが、この記事の結果と似た傾向を示していたので、   
-ぜひお試しあれ。   
+ぜひお試しあれ。     
+   
+小ネタですが、BingAI先生にBindMountとVolumeMountのパフォーマンスについて    
+聞いたところ、全く正反対のことを答えて来やがりました...   
+みなさんも用法用量を守って活用しましょうね(^_^;)   
 では(*^^*)ノシ   

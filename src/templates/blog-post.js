@@ -12,6 +12,8 @@ import { BrowserView, MobileView } from "react-device-detect"
 import { Disqus } from 'gatsby-plugin-disqus'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHashtag } from '@fortawesome/free-solid-svg-icons'
+import styled from '@emotion/styled'
+
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -28,6 +30,14 @@ const BlogPostTemplate = ({
   }
   let tags = post.frontmatter.tags
   console.log(tags)
+
+  const TagBox = styled.div`
+  float: left;
+`
+  const FloatCancelBox = styled.div`
+  float: none;
+`
+
   return (
 
     <Layout location={location} title={siteTitle}>
@@ -38,33 +48,38 @@ const BlogPostTemplate = ({
       >
         <BrowserView>
           <Stack direction spacing='2em'>
-            <Box w="50em" maxW="50em">
+            <Box w="40em" maxW="40em">
               <header>
-                <h1 itemProp="headline">{post.frontmatter.title}</h1>
-                <p>{post.frontmatter.date}</p>
-                <HStack>
+                <Stack>
 
-                  {tags && tags.length > 0 && tags?.map(tag => {
-                    return (
-                      <Box >
-                        <Link to={"/tagpage/?tag=" + tag} rel="prev" className="tag-button">
-                          <FontAwesomeIcon icon={faHashtag} />
-                          {" " + tag}
-                        </Link>
-                      </Box>
+                  <h1 itemProp="headline">{post.frontmatter.title}</h1>
+                  <p>{post.frontmatter.date}</p>
+                  <Box>
+
+                    {tags && tags.length > 0 && tags?.map(tag => {
+                      return (
+                        <TagBox >
+                          <Link to={"/tagpage/?tag=" + tag} rel="prev" className="tag-button">
+                            <FontAwesomeIcon icon={faHashtag} />
+                            {" " + tag}
+                          </Link>
+                        </TagBox>
+                      )
+                    }
                     )
-                  }
-                  )
-                  }
-                </HStack>
-                <p><b>この記事は{timetoread}分ぐらいで読めるっぽいよ。</b></p>
+                    }
+                  </Box>
+                  <Box>
+                      <p><b>この記事は{timetoread}分ぐらいで読めるっぽいよ。</b></p>
+                  </Box>
+                </Stack>
               </header>
               <section
                 dangerouslySetInnerHTML={{ __html: post.html }}
                 itemProp="articleBody"
               />
             </Box>
-            <Box maxW="20em">
+            <Box w="13em" maxW="13em">
               <Sidetoc tocdata={post.tableOfContents} />
             </Box>
             <hr />

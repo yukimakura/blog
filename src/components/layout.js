@@ -35,7 +35,7 @@ const Layout = ({ location, title, children }) => {
       <Bio />
       <BrowserView>
         <Stack direction spacing='3em'>
-          <Box mwxW="250px" w="250px" h="100%" className="sidebar-wrapper">
+          <Box mwxW="300px" w="300px" h="100%" className="sidebar-wrapper">
             <Sidebar />
           </Box>
           <Box maxW="65em">
