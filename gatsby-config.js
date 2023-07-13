@@ -23,6 +23,14 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://yukimakura.github.io/blog/`,
+        stripQueryString: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
