@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://yukimakura.github.io/blog/sitemap-index.xml
