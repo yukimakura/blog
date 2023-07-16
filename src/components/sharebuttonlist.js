@@ -1,55 +1,46 @@
 import {
-    FacebookIcon,
-    FacebookShareButton,
-    HatenaIcon,
-    HatenaShareButton,
-    LineIcon,
-    LineShareButton,
-    TwitterIcon,
-    TwitterShareButton
-  } from 'react-share'
-  
-  import React from 'react'
-  import styled from '@emotion/styled'
-  
-  const Wrapper = styled.div`
-    display: flex;
-    padding-bottom: 24px;
-  `
-  
-  const ButtonWrapper = styled.div`
-    padding-right: 12px;
-  `
-  
-  const ShareButtonList = ({title, url}) => {
-    return (
-      <Wrapper>
-        <ButtonWrapper>
+  FacebookIcon,
+  FacebookShareButton,
+  HatenaIcon,
+  HatenaShareButton,
+  LineIcon,
+  LineShareButton,
+  TwitterIcon,
+  TwitterShareButton
+} from 'react-share'
+
+import React from 'react'
+import styled from '@emotion/styled'
+import { BrowserView, MobileView, isBrowser } from 'react-device-detect'
+import { Stack, Box } from '@chakra-ui/react';
+
+const buttonSize = isBrowser ? 40 : 55;
+
+const ShareButtonList = ({ title, url }) => {
+  return (
+    <Stack direction>
+        <Box>
           <FacebookShareButton url={url}>
-            <FacebookIcon size={40} round />
+            <FacebookIcon size={buttonSize} round />
           </FacebookShareButton>
-        </ButtonWrapper>
-  
-        <ButtonWrapper>
+        </Box>
+        <Box>
           <LineShareButton url={url} >
-            <LineIcon size={40} round />
+            <LineIcon size={buttonSize} round />
           </LineShareButton>
-        </ButtonWrapper>
-  
-        <ButtonWrapper>
+        </Box>
+        <Box>
           <TwitterShareButton title={title} url={url} >
-            <TwitterIcon size={40} round />
+            <TwitterIcon size={buttonSize} round />
           </TwitterShareButton>
-        </ButtonWrapper>
-  
-        <ButtonWrapper>
+        </Box>
+        <Box>
           <HatenaShareButton url={url} >
-            <HatenaIcon size={40} round />
+            <HatenaIcon size={buttonSize} round />
           </HatenaShareButton>
-        </ButtonWrapper>
-      </Wrapper>
-    )
-  }
-  
-  export default ShareButtonList
-  
+        </Box>
+    </Stack>
+  )
+}
+
+export default ShareButtonList

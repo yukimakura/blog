@@ -70,7 +70,7 @@ const BlogPostTemplate = ({
                     }
                   </Box>
                   <Box>
-                      <p><b>この記事は{timetoread}分ぐらいで読めるっぽいよ。</b></p>
+                    <p><b>この記事は{timetoread}分ぐらいで読めるっぽいよ。</b></p>
                   </Box>
                 </Stack>
               </header>
@@ -114,8 +114,14 @@ const BlogPostTemplate = ({
           このポエムを轟かせたいと思ったらシェアやで
           <br />
           <br />
-          <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`} />
-          {/* <Bio /> */}
+          <BrowserView>
+            <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`} />
+          </BrowserView>
+          <MobileView>
+            <center>
+              <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`} />
+            </center>
+          </MobileView>
           <Disqus config={disqusConfig} />
         </footer>
       </article>

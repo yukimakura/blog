@@ -11,6 +11,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { Stack, Box } from '@chakra-ui/react';
+import { BrowserView, MobileView } from "react-device-detect"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -39,7 +40,59 @@ const Bio = () => {
       <Stack direction spacing='3px' justifyContent='center' >
         <Box alignContent='center'>
           <Stack spaceing='0px'>
-            <Box marginLeft='0em'>
+            <BrowserView>
+              <Box marginLeft='0em'>
+                <StaticImage
+                  className="bio-avatar"
+                  layout="fixed"
+                  formats={["auto", "webp", "avif"]}
+                  src="../images/yukimakuraicon.jpeg"
+                  width={55}
+                  height={55}
+                  quality={95}
+                  alt="Profile picture"
+                />
+              </Box>
+              <Box>
+                <a
+                  style={{
+                    fontSize: `1.35em`,
+                    color: `#007fff`,
+                    boxShadow: `none`,
+                  }}
+                  href={`https://twitter.com/${social.twitter}`}
+                >
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
+                <a
+                  style={{
+                    fontSize: `1.35em`,
+                    color: `#000`,
+                    boxShadow: `none`,
+                  }}
+                  href={`https://github.com/${social.github}`}
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </Box>
+            </BrowserView>
+          </Stack>
+        </Box>
+        <BrowserView>
+          <Box >
+
+            {author?.name && (
+              <p>
+                {author?.summary || null}<br></br>
+                {` `}
+                <a href="https://yukihurumakura.blogspot.com/" target="_blank" rel="noopener noreferrer">旧サイトはこちら！</a>
+              </p>
+            )}
+          </Box>
+        </BrowserView>
+        <MobileView>
+          <Stack>
+            <Stack direction>
               <StaticImage
                 className="bio-avatar"
                 layout="fixed"
@@ -49,44 +102,45 @@ const Bio = () => {
                 height={55}
                 quality={95}
                 alt="Profile picture"
+                
               />
-            </Box>
-            <Box>
-            <a
-              style={{
-                fontSize: `1.35em`,
-                color: `#007fff`,
-                boxShadow: `none`,
-              }}
-              href={`https://twitter.com/${social.twitter}`}
-            >
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-            <a
-              style={{
-                fontSize: `1.35em`,
-                color: `#000`,
-                boxShadow: `none`,
-              }}
-              href={`https://github.com/${social.github}`}
-            >
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
+              <Box marginTop={'-10px'} marginLeft={'-10px'}>
+                <a
+                  style={{
+                    fontSize: `55px`,
+                    color: `#007fff`,
+                    boxShadow: `none`,
+                  }}
+                  href={`https://twitter.com/${social.twitter}`}
+                >
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
+              </Box>
+              <Box marginTop={'-10px'}>
+                <a
+                  style={{
+                    fontSize: `55px`,
+                    color: `#000`,
+                    boxShadow: `none`,
+                  }}
+                  href={`https://github.com/${social.github}`}
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </Box>
+            </Stack>
+            <Box >
+
+              {author?.name && (
+                <p>
+                  <a href="https://yukihurumakura.blogspot.com/" target="_blank" rel="noopener noreferrer">旧サイトはこちら！</a>
+                </p>
+              )}
             </Box>
           </Stack>
-        </Box>
-        <Box >
-
-          {author?.name && (
-            <p>
-              {author?.summary || null}<br></br>
-              {` `}
-              <a href="https://yukihurumakura.blogspot.com/" target="_blank" rel="noopener noreferrer">旧サイトはこちら！</a>
-            </p>
-          )}
-        </Box>
-      </Stack>
-    </div>
+        </MobileView>
+      </Stack >
+    </div >
   )
 }
 

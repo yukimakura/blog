@@ -5,6 +5,9 @@ import { Timeline } from 'react-twitter-widgets'
 import MonthlyArchives from "./monthlyarchives"
 import AllTags from "./alltags"
 import { Stack, Box } from '@chakra-ui/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { MobileView } from "react-device-detect"
 
 const Sidebar = () => {
 
@@ -23,13 +26,46 @@ const Sidebar = () => {
         }
       }
     }
+    site {
+      siteMetadata {
+        social {
+          twitter
+          github
+        }
+      }
+    }
   }
   `)
 
   // const posts = data.allMarkdownRemark.edges
   return (
     <Stack>
-
+      <MobileView>
+        <center>
+          <Box>
+            <a
+              style={{
+                fontSize: `2.5em`,
+                color: `#007fff`,
+                boxShadow: `none`,
+              }}
+              href={`https://twitter.com/${data.site.siteMetadata.social.twitter}`}
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
+            <a
+              style={{
+                fontSize: `2.5em`,
+                color: `#000`,
+                boxShadow: `none`,
+              }}
+              href={`https://github.com/${data.site.siteMetadata.social.github}`}
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </Box>
+        </center>
+      </MobileView>
       <MonthlyArchives />
       <AllTags />
       <Timeline
