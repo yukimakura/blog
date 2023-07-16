@@ -5,6 +5,7 @@ import { faHashtag } from '@fortawesome/free-solid-svg-icons'
 import { Stack, Box, HStack } from "@chakra-ui/react";
 
 import Layout from "../components/layout"
+import styled from '@emotion/styled'
 
 const TagPage = ({ data, location }) => {
     const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -12,6 +13,10 @@ const TagPage = ({ data, location }) => {
 
     const params = new URLSearchParams(location.search);
     const tagname = params.get("tag");
+
+    const TagBox = styled.div`
+    float: left;
+  `
 
     return (
         <Layout location={location} title={siteTitle}>
@@ -28,27 +33,33 @@ const TagPage = ({ data, location }) => {
                                 itemType="http://schema.org/Article"
                             >
                                 <header>
-                                    <h2>
-                                        <Link to={post.fields.slug} itemProp="url">
-                                            <span itemProp="headline">{title}</span>
-                                        </Link>
-                                    </h2>
-                                    <HStack>
+                                    <Stack>
+                                        <Box>
 
-                                        {post.frontmatter.tags && post.frontmatter.tags.length > 0 && post.frontmatter.tags?.map(tag => {
-                                            return (
-                                                <Box >
-                                                    <Link to={"/tagpage/?tag=" + tag} rel="prev" className="tag-button">
-                                                        <FontAwesomeIcon icon={faHashtag} />
-                                                        {" " + tag}
-                                                    </Link>
-                                                </Box>
+                                            <h2>
+                                                <Link to={post.fields.slug} itemProp="url">
+                                                    <span itemProp="headline">{title}</span>
+                                                </Link>
+                                            </h2>
+                                        </Box>
+                                        <Box>
+                                            {post.frontmatter.tags && post.frontmatter.tags.length > 0 && post.frontmatter.tags?.map(tag => {
+                                                return (
+                                                    <TagBox >
+                                                        <Link to={"/tagpage/?tag=" + tag} rel="prev" className="tag-button">
+                                                            <FontAwesomeIcon icon={faHashtag} />
+                                                            {" " + tag}
+                                                        </Link>
+                                                    </TagBox>
+                                                )
+                                            }
                                             )
-                                        }
-                                        )
-                                        }
-                                    </HStack>
-                                    <small>{post.frontmatter.date}</small>
+                                            }
+                                        </Box>
+                                        <Box>
+                                            <small>{post.frontmatter.date}</small>
+                                        </Box>
+                                    </Stack>
                                 </header>
                                 <section>
                                     <p

@@ -34,7 +34,7 @@ const AllTags = (querydata) => {
                 {allMarkdownRemark.distinct && allMarkdownRemark.distinct.length > 0 && allMarkdownRemark.distinct?.map(tag => {
                     return (
                         <TagBox >
-                            <Link to={"/tagpage/?tag=" + tag} rel="prev" className="tag-button">
+                            <Link to={"/tagpage/?tag=" + encodeURI(tag)} rel="prev" className="tag-button">
                                 <FontAwesomeIcon icon={faHashtag} />
                                 {" " + tag}
                             </Link>
