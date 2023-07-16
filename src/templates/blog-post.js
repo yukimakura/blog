@@ -6,6 +6,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Sidetoc from '../components/sidetoc'
+import CustomFooter from '../components/customFooter'
 import ShareButtonList from "../components/sharebuttonlist";
 import { Stack, Box, HStack } from "@chakra-ui/react";
 import { BrowserView, MobileView } from "react-device-detect"
@@ -22,12 +23,6 @@ const BlogPostTemplate = ({
   const siteTitle = site.siteMetadata?.title || `Title`
   const timetoread = post.timeToRead || 0
 
-  let disqusConfig = {
-    url: `${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`,
-    identifier: post.id,
-    title: siteTitle,
-
-  }
   let tags = post.frontmatter.tags
   console.log(tags)
 
@@ -78,11 +73,12 @@ const BlogPostTemplate = ({
                 dangerouslySetInnerHTML={{ __html: post.html }}
                 itemProp="articleBody"
               />
+              <hr/>
+              <CustomFooter post={post} next={next} previous={previous} />
             </Box>
             <Box w="13em" maxW="13em">
               <Sidetoc tocdata={post.tableOfContents} />
             </Box>
-            <hr />
           </Stack>
         </BrowserView>
         <MobileView>
@@ -109,48 +105,10 @@ const BlogPostTemplate = ({
             itemProp="articleBody"
           />
         </MobileView>
-        <hr />
-        <footer>
-          このポエムを轟かせたいと思ったらシェアやで
-          <br />
-          <br />
-          <BrowserView>
-            <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`} />
-          </BrowserView>
-          <MobileView>
-            <center>
-              <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`} />
-            </center>
-          </MobileView>
-          <Disqus config={disqusConfig} />
-        </footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      </article >
+      <MobileView>
+        <CustomFooter post={post} next={next} previous={previous} />
+      </MobileView>
     </Layout >
   )
 }
