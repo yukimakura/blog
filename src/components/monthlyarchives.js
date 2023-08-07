@@ -59,7 +59,7 @@ const MonthlyArchives = () => {
                             <details>
                                 <summary>{yearGr[0]}({yearGr[1]?.map(x => x[0][1][1]).flat(Infinity).length})</summary>
                                 <ol style={{ listStyle: `none`, paddingLeft: '1em' }}>
-                                    {groupBy(yearGr[1]?.map(x => [x[1][0][0], x[1][0][1]]), x => x[0])?.map(month => {
+                                    {groupBy(yearGr[1]?.map(x => [x[1][0][0], x[1][0][1]]), x => x[0])?.sort().map(month => {
                                         return (
                                             <li>
                                                 <details>
