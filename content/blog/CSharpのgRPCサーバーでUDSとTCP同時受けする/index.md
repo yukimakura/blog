@@ -2,7 +2,7 @@
 title: "CSharpのgRPCサーバーでUDSとTCP同時受けする"
 date: "2023-08-08T08:15:00Z"
 description: "CSharp(C#)のgRPCサーバーでUnixDomainSocketとTCP同時受けする"
-tags: ["C#","gRPC","UDS","DIコンテナ"]
+tags: ["CSharp","gRPC","UDS","DIコンテナ"]
 ---
 ## TL;DR
 - Kestrelの設定を変更すればOK

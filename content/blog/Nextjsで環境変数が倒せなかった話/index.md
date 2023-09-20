@@ -2,7 +2,7 @@
 title: Nextjs 13で環境変数が倒せなかった話
 date: "2023-07-23T08:45:00Z"
 description: "Nextjs 13で環境変数を実行時ロードが思うように出来なかった話"
-tags: ["ポエム","nextjs","react","C#","gRPC","gRPC-Web","Docker"]
+tags: ["ポエム","nextjs","react","CSharp","gRPC","gRPC-Web","Docker"]
 ---
 ## 背景
 職場でフロントエンドがNextjs(13)、バックエンドにC#のgRPC-Webサーバーの   
