@@ -4,6 +4,8 @@ date: "2023-08-19T23:30:00Z"
 description: "winlatorを活用してノベルゲー(ギャルゲー)をどこでも楽しもう"
 tags: ["ノベルゲー","winlator","wine","コンテナ仮想化"]
 ---
+## 日本語化版記事書きました！
+[Winlatorのコンテナ内を日本語化する](https://yukimakura.github.io/blog/Winlator%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E5%86%85%E3%82%92%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%8C%96%E3%81%99%E3%82%8B/Winlator%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E5%86%85%E3%82%92%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%8C%96%E3%81%99%E3%82%8B/ )
 ## 背景
 **買ったギャルゲーが消化しきれない!!**
 <br/>
