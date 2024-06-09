@@ -79,6 +79,7 @@ html {
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* overflow: hidden; */
 }
 
 body {
@@ -86,9 +87,11 @@ body {
   font-size: var(--fontSize-1);
   color: var(--color-text);
   height: max-content;
-  background: linear-gradient(to top, rgba(247, 255, 203, 0.589) 0%, rgba(247, 255, 203, 0.589) 100%), url(./images/backgroundimage.jpg);
+  /* background: linear-gradient(to top, rgba(247, 255, 203, 0.589) 0%, rgba(247, 255, 203, 0.589) 100%), url(./images/backgroundimage.jpg); */
+  /* overflow: hidden; */
 
 }
+
 
 footer {
   padding: var(--spacing-6) var(--spacing-0);
@@ -253,11 +256,13 @@ a:focus {
   height: max-content;
   padding: var(--spacing-5) var(--spacing-1);
   background-color: rgba(241, 219, 122, 0.866);
+  overflow: hidden;
 }
 
 
 .global-wrapper[data-is-root-path="true"] .bio {
   margin-bottom: var(--spacing-20);
+  overflow: hidden;
 }
 
 .global-header {

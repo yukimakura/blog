@@ -23,6 +23,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-provide-react`,
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-canonical-urls`,

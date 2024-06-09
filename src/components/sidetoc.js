@@ -9,7 +9,7 @@ const Sidetoc = (props) => {
     color: rgba(243, 230, 173, 0.821);
     background-color: rgba(243, 230, 173, 0.821);
     position: sticky;
-    top: 100px;
+    top: 1000px;
     `
 
     const TocBody = styled.div`

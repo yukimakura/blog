@@ -76,9 +76,9 @@ const BlogPostTemplate = ({
               <hr/>
               <CustomFooter post={post} next={next} previous={previous} />
             </Box>
-            <Box w="13em" maxW="13em">
+            {/* <Box w="13em" maxW="13em">
               <Sidetoc tocdata={post.tableOfContents} />
-            </Box>
+            </Box> */}
           </Stack>
         </BrowserView>
         <MobileView>
