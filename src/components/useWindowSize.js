@@ -16,7 +16,7 @@ export const useWindowSize = () => {
 };
 
 export const useWindowSizeWidthOnly = () => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(0);
   useLayoutEffect(() => {
     const updateSize = () => {
       if (window.innerWidth != width){
@@ -34,7 +34,7 @@ export const useWindowSizeWidthOnly = () => {
 };
 
 export const useWindowSizeHeightOnly = () => {
-  const [height, setHeight] = useState(window.innerHeight);
+  const [height, setHeight] = useState(0);
   useLayoutEffect(() => {
     const updateSize = () => {
       if (window.innerHeight != height){
