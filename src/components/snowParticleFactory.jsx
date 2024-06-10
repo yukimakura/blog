@@ -6,23 +6,18 @@ import styled from 'styled-components';
 import { useWindowSizeWidthOnly } from './useWindowSize'
 import { SnowParticle } from './snowParticle';
 
-export const SnowParticleFactory = () => {
-    const width = useWindowSizeWidthOnly();
+export const SnowParticleFactory = ({ width }) => {
     const particleCount = 200;
     const [particles, setParticles] = useState(Array(particleCount).fill(0).map((p, i) => ({ baseX: width * Math.random(), initDelayMs: i * 500, initY: -100, rotation: Math.PI * Math.random() })));
-    const [isInit, setIsInit] = useState(false);
 
     React.useEffect(() => {
-        if (!isInit) {
-            console.log('onchange', isInit, width)
-            setParticles(Array(particleCount).fill(0).map((p, i) => ({ baseX: width * Math.random(), initDelayMs: i * 500, initY: -100, rotation: Math.PI * Math.random() })));
-            setIsInit(true);
-        }
-    }, [width, isInit]);
+        console.log('init onchange factory',  width)
+        setParticles(Array(particleCount).fill(0).map((p, i) => ({ baseX: width * Math.random(), initDelayMs: i * 500, initY: -100, rotation: Math.PI * Math.random() })));
+    }, [width]);
 
 
     React.useEffect(() => {
-        console.log("Component Init!");
+        console.log("Factory Component Init!");
     }, []);
 
     return (

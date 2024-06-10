@@ -1,4 +1,5 @@
 
+import React, { useMemo, useRef, useState } from 'react';
 import { Stage, Sprite } from '@pixi/react';
 
 import styled from 'styled-components';
@@ -8,7 +9,22 @@ import { SnowParticleFactory } from './snowParticleFactory';
 export const PixiJsBackgroundComponent = () => {
 
   const width = useWindowSizeWidthOnly();
-  const height = useWindowSizeHeightOnly();
+  const [latestWidth, setLatestWidth] = useState(0);
+  const [latestHeight, setLatestHeight] = useState(0);
+
+
+  React.useEffect(() => {
+    setLatestWidth(window.innerWidth);
+    setLatestHeight(window.innerHeight);
+  }, []);
+
+  ///スマホのブラウザ対策、Heightはめっちゃ変わるため、
+  //それをフックすると忙しくコンポーネントが再レンダリングされる
+  React.useEffect(() => {
+    setLatestWidth(width);
+  }, [width]);
+
+
   const BackGroundCSS = styled.div`
   z-index: -1;
   position: fixed;
@@ -21,8 +37,8 @@ export const PixiJsBackgroundComponent = () => {
   return (
     <BackGroundCSS>
 
-      <Stage x={1000} y={1000} options={{ backgroundAlpha: 0 }} width={width} height={height}>
-        <SnowParticleFactory />
+      <Stage x={1000} y={1000} options={{ backgroundAlpha: 0 }} width={latestWidth} height={latestHeight}>
+        <SnowParticleFactory width={latestWidth} />
       </Stage>
     </BackGroundCSS>
   );
