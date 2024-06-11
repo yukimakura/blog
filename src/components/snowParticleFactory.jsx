@@ -8,7 +8,7 @@ import { SnowParticle } from './snowParticle';
 
 export const SnowParticleFactory = ({ width }) => {
     const particleCount = 200;
-    const [particles, setParticles] = useState(Array(particleCount).fill(0).map((p, i) => ({ baseX: width * Math.random(), initDelayMs: i * 500, initY: -100, rotation: Math.PI * Math.random() })));
+    const [particles, setParticles] = useState(Array(particleCount).fill(0).map((p, i) => ({ baseX: width * Math.random(), initDelayMs: i * 500, initY: -60, rotation: Math.PI * Math.random() })));
 
     React.useEffect(() => {
         console.log('init onchange factory',  width)

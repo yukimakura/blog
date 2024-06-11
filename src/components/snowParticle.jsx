@@ -19,7 +19,7 @@ export const SnowParticle = ({ baseX, initY, currentXBias, rotation, initDelayMs
     const [sumElpsMsForInitDelay, setSumElpsMsForInitDelay] = useState(0);
     const [isInitEnd, setIsInitEnd] = useState(false);
 
-    const maxYPos = height + 100;
+    const maxYPos = height + 20;
 
     let count = 0;
 
