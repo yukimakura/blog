@@ -7,6 +7,7 @@ import Bio from "../components/bio"
 import { BrowserView, MobileView } from "react-device-detect"
 import { PixiJsBackgroundComponent } from "./pixijsBackgroundComponent";
 import styled from 'styled-components';
+import { Xeyes } from "./xeyes.jsx";
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -38,6 +39,7 @@ const Layout = ({ location, title, children }) => {
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <PixiJsBackgroundComponent />
+      <Xeyes />
       <CanScroll>
 
         <center>
@@ -67,7 +69,7 @@ const Layout = ({ location, title, children }) => {
           </center>
         </footer>
       </CanScroll>
-    </div>
+    </div >
   )
 }
 
