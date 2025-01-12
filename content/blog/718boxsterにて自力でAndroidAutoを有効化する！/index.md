@@ -1,7 +1,7 @@
 ---
-title: 718boxsterにて自分でAndroidAutoを有効化する！
+title: 718boxsterにて自力でAndroidAutoを有効化する！
 date: "2024-10-01T08:00:00Z"
-description: "718boxsterにて自分でAndroidAutoを有効化する！"
+description: "718boxsterにて自力でAndroidAutoを有効化する！"
 tags: ["360度カメラ","GoPro","GoProFusion","FFmpeg","YouTube"]
 ---
 
