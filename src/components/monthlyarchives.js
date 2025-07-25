@@ -46,14 +46,14 @@ const MonthlyArchives = () => {
         )
     }
     let groupingData = groupBy(data.allMarkdownRemark.edges?.map(item => [item.node.frontmatter.date.substring(0, 7), item.node]), item => item);
-    let yearGropuingDara = groupBy(groupingData?.map(x => [x[0][0].substring(0, 4), x]), x => x[0]);
+    let yearGropuingData = groupBy(groupingData?.map(x => [x[0][0].substring(0, 4), x]), x => x[0]);
     return (
         <Wrapper >
             <center>
                 <h4>月別アーカイブ</h4>
             </center>
             <ol style={{ listStyle: `none`, paddingLeft: '1em' }}>
-                {yearGropuingDara?.map(yearGr => {
+                {yearGropuingData?.sort((a,b) => b[0] - a[0]).map(yearGr => {
                     return (
                         <li>
                             <details>
