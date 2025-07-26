@@ -9,6 +9,11 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  TwitterIcon,
+  GithubIcon
+} from 'next-share'
+
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { Stack, Box } from '@chakra-ui/react';
 import { BrowserView, MobileView } from "react-device-detect"
@@ -56,23 +61,25 @@ const Bio = () => {
               <Box>
                 <a
                   style={{
-                    fontSize: `1.35em`,
+                    fontSize: `1.1em`,
                     color: `#007fff`,
                     boxShadow: `none`,
                   }}
-                  href={`https://twitter.com/${social.twitter}`}
+                  href={`https://x.com/${social.twitter}`}
                 >
-                  <FontAwesomeIcon icon={faTwitter} />
+                  {/* <FontAwesomeIcon icon={faTwitter} /> */}
+                  <TwitterIcon size="1.1em" round />
                 </a>
                 <a
                   style={{
-                    fontSize: `1.35em`,
+                    fontSize: `1.1em`,
                     color: `#000`,
                     boxShadow: `none`,
                   }}
                   href={`https://github.com/${social.github}`}
                 >
-                  <FontAwesomeIcon icon={faGithub} />
+                  {/* <FontAwesomeIcon icon={faGithub} /> */}
+                  <GithubIcon size="1.1em" round />
                 </a>
               </Box>
             </BrowserView>
@@ -111,9 +118,10 @@ const Bio = () => {
                     color: `#007fff`,
                     boxShadow: `none`,
                   }}
-                  href={`https://twitter.com/${social.twitter}`}
+                  href={`https://x.com/${social.twitter}`}
                 >
-                  <FontAwesomeIcon icon={faTwitter} />
+                  <TwitterIcon size="55px" round />
+
                 </a>
               </Box>
               <Box marginTop={'-10px'}>
@@ -125,7 +133,7 @@ const Bio = () => {
                   }}
                   href={`https://github.com/${social.github}`}
                 >
-                  <FontAwesomeIcon icon={faGithub} />
+                  <GithubIcon size="55px" round />
                 </a>
               </Box>
             </Stack>

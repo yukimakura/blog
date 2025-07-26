@@ -49,6 +49,7 @@ const CustomFooter = ({ post , previous , next }) => {
             <ShareButtonList title={`${post.frontmatter.title} - ${site.siteMetadata?.title}`} url={`${encodeURI(site.siteMetadata?.siteUrl + '/blog' + post.fields?.slug)}`} />
           </center>
         </MobileView>
+        ↓この広告はゆきまくらと一切関係ございません。DISQUSが勝手につけてるだけです。
         <Disqus config={disqusConfig} />
       </footer>
       <nav className="blog-post-nav">
