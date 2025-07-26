@@ -1,13 +1,11 @@
 import {
   FacebookIcon,
   FacebookShareButton,
-  HatenaIcon,
-  HatenaShareButton,
   LineIcon,
   LineShareButton,
   TwitterIcon,
   TwitterShareButton
-} from 'react-share'
+} from 'next-share'
 
 import React from 'react'
 import styled from '@emotion/styled'
@@ -33,11 +31,6 @@ const ShareButtonList = ({ title, url }) => {
           <TwitterShareButton title={title} url={url} >
             <TwitterIcon size={buttonSize} round />
           </TwitterShareButton>
-        </Box>
-        <Box>
-          <HatenaShareButton url={url} >
-            <HatenaIcon size={buttonSize} round />
-          </HatenaShareButton>
         </Box>
     </Stack>
   )
